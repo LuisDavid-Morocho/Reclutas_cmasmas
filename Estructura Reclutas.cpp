@@ -73,7 +73,7 @@ int main(){
 		
 		while((strcmp(recluta[i].curso,recluta[i].a)!=0)&&(strcmp(recluta[i].curso,recluta[i].b)!=0)&&(strcmp(recluta[i].curso,recluta[i].c)!=0)){
 			fflush(stdin);
-			cout<<"\nDigite si ud esta en la Seccion ARMAS,PILOTO O COCINA\n: ";
+			cout<<"\nDigite una de las opciones de seccion: ARMAS,PILOTO O COCINA\n: ";
 			cout<<i+1<<".Digita la Seccion del Recluta: ";
 			cin.getline(recluta[i].curso,30,'\n');
 			strupr(recluta[i].curso);
