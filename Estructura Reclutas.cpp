@@ -11,8 +11,8 @@ struct reclutas{
 	char curso[20];
 	char sex1[20]="HOMBRE";
 	char sex2[20]="MUJER";
-	char a[20]="A";
-	char b[20]="B";
+	char a[20]="ARMAS";
+	char b[20]="PILOTOS";
 
 	
 	
@@ -21,10 +21,10 @@ struct reclutas{
 int main(){
 					
 	int n;
-	int ca;
-	int cb;
-	int ch;
-	int cm;
+	int ca=0;
+	int cb=0;
+	int ch=0;
+	int cm=0;
 	
 
 	int posm=0,posh=0,posa=0,posb=0;
@@ -45,7 +45,7 @@ int main(){
 		cin.getline(recluta[i].sexo,30,'\n');
 		strupr(recluta[i].sexo);
 		
-		while((strcmp(recluta[i].sexo,recluta[i].sex1)==1)&&(strcmp(recluta[i].sexo,recluta[i].sex2)==1)){
+		while((strcmp(recluta[i].sexo,recluta[i].sex1)!=0)&&(strcmp(recluta[i].sexo,recluta[i].sex2)!=0)){
 			fflush(stdin);
 			cout<<"\nDEBE DE INGRESAR SI ES HOMBRE O MUJER\n";
 			cout<<i+1<<".Digita El Sexo del Recluta: ";
@@ -68,9 +68,9 @@ int main(){
 		cin.getline(recluta[i].curso,30,'\n');
 		strupr(recluta[i].curso);
 		
-		while((strcmp(recluta[i].curso,recluta[i].a)==1)&&(strcmp(recluta[i].curso,recluta[i].b)==1)){
+		while((strcmp(recluta[i].curso,recluta[i].a)!=0)&&(strcmp(recluta[i].curso,recluta[i].b)!=0)){
 			fflush(stdin);
-			cout<<"\nDigite si ud esta en la Seccion de ARMAS,PILOTO O COCINA: ";
+			cout<<"\nDigite si ud esta en la Seccion ARMAS O PILOTOS\n: ";
 			cout<<i+1<<".Digita la Seccion del Recluta: ";
 			cin.getline(recluta[i].curso,30,'\n');
 			strupr(recluta[i].curso);
@@ -83,7 +83,7 @@ int main(){
 			posa=i;
 		}
 		 if(strcmp(recluta[i].b,recluta[i].curso)==0){
-			cb;
+			cb++;
 			posb=i;
 		}	
 
@@ -105,10 +105,10 @@ cout<<endl;
 	
 		if(posa=i){
 		
-		cout<<"\nNumero de Personas en la Seccion de Limpieza es: "<<ca;
+		cout<<"\nNumero de Personas en la Seccion DE ARMAS es: "<<ca;
 		}
 		if(posb=i){
-		cout<<"\nNumero de Personas en la Seccion Armas es: "<<cb;break;
+		cout<<"\nNumero de Personas en la Seccion DE PILOTOS es: "<<cb;break;
 	}
 
 }
