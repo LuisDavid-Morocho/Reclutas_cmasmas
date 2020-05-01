@@ -1,6 +1,7 @@
 #include <iostream>
 #include <conio.h>
 #include <string.h>
+#include <windows.h>
 using namespace std;
 
 
@@ -30,7 +31,7 @@ int main(){
 	int hc=0,mc=0,ha=0,ma=0,hp=0,mp=0,phc=0,pmc=0,pha=0,pma=0,php=0,pmp=0;
 
 	int posm=0,posh=0,posa=0,posb=0,posc=0;
-	
+	system("color f0");
 	cout<<".Digite Cuantas Reclutas Desea Ingresar: ";
 	cin>>n;
 	
