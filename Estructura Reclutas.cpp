@@ -12,7 +12,8 @@ struct reclutas{
 	char sex1[20]="HOMBRE";
 	char sex2[20]="MUJER";
 	char a[20]="ARMAS";
-	char b[20]="PILOTOS";
+	char b[20]="PILOTO";
+	char c[20]="COCINA";
 
 	
 	
@@ -23,11 +24,12 @@ int main(){
 	int n;
 	int ca=0;
 	int cb=0;
+	int cc=0;
 	int ch=0;
 	int cm=0;
-	
+	int hc=0,mc=0,ha=0,ma=0,hp=0,mp=0,phc=0,pmc=0,pha=0,pma=0,php=0,pmp=0;
 
-	int posm=0,posh=0,posa=0,posb=0;
+	int posm=0,posh=0,posa=0,posb=0,posc=0;
 	
 	cout<<".Digite Cuantas Reclutas Desea Ingresar: ";
 	cin>>n;
@@ -62,15 +64,16 @@ int main(){
 		if(strcmp(recluta[i].sex2,recluta[i].sexo)==0){
 			cm++;
 			posm=i;
-		}	
+		}
+			
 		fflush(stdin);
 		cout<<i+1<<".Digita la Seccion del Recluta: ";
 		cin.getline(recluta[i].curso,30,'\n');
 		strupr(recluta[i].curso);
 		
-		while((strcmp(recluta[i].curso,recluta[i].a)!=0)&&(strcmp(recluta[i].curso,recluta[i].b)!=0)){
+		while((strcmp(recluta[i].curso,recluta[i].a)!=0)&&(strcmp(recluta[i].curso,recluta[i].b)!=0)&&(strcmp(recluta[i].curso,recluta[i].c)!=0)){
 			fflush(stdin);
-			cout<<"\nDigite si ud esta en la Seccion ARMAS O PILOTOS\n: ";
+			cout<<"\nDigite si ud esta en la Seccion ARMAS,PILOTO O COCINA\n: ";
 			cout<<i+1<<".Digita la Seccion del Recluta: ";
 			cin.getline(recluta[i].curso,30,'\n');
 			strupr(recluta[i].curso);
@@ -87,7 +90,34 @@ int main(){
 			posb=i;
 		}	
 
-		
+		if(strcmp(recluta[i].c,recluta[i].curso)==0){
+			cc++;
+			posc=i;
+		}	
+		if((strcmp(recluta[i].a,recluta[i].curso)==0)&&(strcmp(recluta[i].sex1,recluta[i].sexo)==0)){
+			ha++;
+			pha=i;
+		}	
+		if((strcmp(recluta[i].a,recluta[i].curso)==0)&&(strcmp(recluta[i].sex2,recluta[i].sexo)==0)){
+			ma++;
+			pma=i;
+		}	
+		if((strcmp(recluta[i].b,recluta[i].curso)==0)&&(strcmp(recluta[i].sex1,recluta[i].sexo)==0)){
+			hp++;
+			php=i;
+		}	
+		if((strcmp(recluta[i].b,recluta[i].curso)==0)&&(strcmp(recluta[i].sex2,recluta[i].sexo)==0)){
+			mp++;
+			pmp=i;
+		}	
+		if((strcmp(recluta[i].c,recluta[i].curso)==0)&&(strcmp(recluta[i].sex1,recluta[i].sexo)==0)){
+			hc++;
+			phc=i;
+		}	
+		if((strcmp(recluta[i].c,recluta[i].curso)==0)&&(strcmp(recluta[i].sex2,recluta[i].sexo)==0)){
+			mc++;
+			pmc=i;
+		}	
 	}
 	
 	for(int i=0;i<n;i++){
@@ -108,12 +138,44 @@ cout<<endl;
 		cout<<"\nNumero de Personas en la Seccion DE ARMAS es: "<<ca;
 		}
 		if(posb=i){
-		cout<<"\nNumero de Personas en la Seccion DE PILOTOS es: "<<cb;break;
+		cout<<"\nNumero de Personas en la Seccion DE PILOTOS es: "<<cb;
+	}
+	
+		if(posc=i){
+		cout<<"\nNumero de Personas en la Seccion DE COCINA es: "<<cc;break;
+	}
+	
+
+}
+cout<<endl<<endl;
+for(int i=0;i<n;i++){
+	
+		if(pha=i){
+		
+		cout<<"\nNumero de Hombres en la Seccion DE ARMAS es: "<<ha;
+		}
+		if(pma=i){
+		cout<<"\nNumero de MUJERES en la Seccion DE ARMAS es: "<<ma;
+	}
+	
+		if(php=i){
+		cout<<"\nNumero de HOMBRES en la Seccion DE PILOTOS es: "<<hp;
+	}
+	
+	if(pmp=i){
+		cout<<"\nNumero de MUJERES en la Seccion DE PILOTOS es: "<<mp;
+	}
+	
+		if(phc=i){
+		cout<<"\nNumero de HOMBRES en la Seccion DE COCINA es: "<<hc;
+	}
+	
+	if(pmc=i){
+		cout<<"\nNumero de MUJERES en la Seccion DE COCINA es: "<<mc;break;
 	}
 
 }
-	
-	
+
 	getch();
 	return 0;
 }
